@@ -1,0 +1,30 @@
+#!/bin/bash
+
+# These commands take this form
+# ./ops [script] [option]
+
+script=${1}
+option=${2}
+
+if [ -z $script ] ; then
+  echo "please enter a command after ./ops"
+
+elif [ $script == "setup" ] ; then
+  echo "setting up"
+  rm -rf node_modules
+  yarn install
+
+elif [ $script == "start" ] ; then
+  echo "starting"
+  yarn dev
+
+elif [ $script == "build" ] ; then
+  echo "building"
+  yarn build
+
+elif [ $script == "ship" ] ; then
+  echo "shipping"
+  now --public
+  # now alias
+
+fi
