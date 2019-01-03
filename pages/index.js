@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import Page from '../components/Page';
 
 export default function Home() {
-  const [state, setState] = useState({ total: null });
+  const [total, setTotal] = useState(null);
   const scale = num => Math.round(num * 100) / 100;
 
   return (
@@ -14,31 +14,31 @@ export default function Home() {
             <input
               type="number"
               className="input"
-              value={state.total}
-              onChange={ev => setState({ ...state, total: ev.target.value })}
+              value={total}
+              onChange={ev => setTotal(ev.target.value)}
               placeholder="Amount to invest"
             />
           </div>
           <div className="list">
             <div className="item">
               40% TLT (iShares 20+ Year Treasury ETF)
-              <div className="result">${scale(state.total * 0.4)}</div>
+              <div className="result">${scale(total * 0.4)}</div>
             </div>
             <div className="item">
               30% VTI (Vanguard Total Stock Market ETF)
-              <div className="result">${scale(state.total * 0.3)}</div>
+              <div className="result">${scale(total * 0.3)}</div>
             </div>
             <div className="item">
               15% IEF (iShares 7-10 Year Treasury ETF)
-              <div className="result">${scale(state.total * 0.15)}</div>
+              <div className="result">${scale(total * 0.15)}</div>
             </div>
             <div className="item">
               7.50% GLD (SPDR Gold Shares ETF)
-              <div className="result">${scale(state.total * 0.075)}</div>
+              <div className="result">${scale(total * 0.075)}</div>
             </div>
             <div className="item">
               7.50% DBC (PowerShares DB Commodity Index Tracking Fund)
-              <div className="result">${scale(state.total * 0.075)}</div>
+              <div className="result">${scale(total * 0.075)}</div>
             </div>
           </div>
         </div>
