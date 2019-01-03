@@ -24,7 +24,7 @@ elif [ $script == "build" ] ; then
 
 elif [ $script == "ship" ] ; then
   echo "shipping"
-  now --public
+  now
   # now alias
 
 fi
